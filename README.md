@@ -8,5 +8,5 @@
 para ativar o ambiente virtual
 
 ```shell
-  poetry shel
+  poetry shell
 ```
