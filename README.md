@@ -10,3 +10,9 @@ para ativar o ambiente virtual
 ```shell
   poetry shell
 ```
+
+adicionar as dependências com o requirements.txt
+
+```shell
+  poetry add `cat requirements.txt`
+```
