@@ -16,3 +16,13 @@ adicionar as dependências com o requirements.txt
 ```shell
   poetry add `cat requirements.txt`
 ```
+
+criar banco de dados
+```shell
+  ./manage.py makemigrations && ./manage.py migrate
+```
+
+criar um super usuário
+```shell
+  ./manage.py createsuperuser
+```
