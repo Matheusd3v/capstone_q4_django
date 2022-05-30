@@ -47,6 +47,8 @@ THIRD_PARTY_APPS = [
 ]
 
 MY_APPS = [
+    "user",
+    "address",
     "category",
     "brand",
     "products",
@@ -139,12 +141,23 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+AUTH_USER_MODEL = "user.User"
+
 REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-    ]
+    ],
 }
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Mercado do Zé API",
+    "DESCRIPTION": "API com os endpoints e documentação do mercado do zé",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    # OTHER SETTINGS
+}
