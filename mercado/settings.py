@@ -49,7 +49,8 @@ THIRD_PARTY_APPS = [
 MY_APPS = [
     "category",
     "brand",
-    "products"
+    "products",
+    "purchase",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
@@ -144,6 +145,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
