@@ -4,11 +4,13 @@ from rest_framework import routers
 
 from address.views import AddressViewSet
 from category.views import CategoryViewSet
+from brand.views import BrandViewSet
 
 router = routers.DefaultRouter()
 
 router.register(r"addresses", AddressViewSet, basename="addresses")
 router.register(r"categories", CategoryViewSet, basename="categories")
+router.register(r"brands", BrandViewSet, basename="brands")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
