@@ -1,12 +1,14 @@
-from django.urls import path, include
 from django.contrib import admin
-from User.views import UserViewSet
+from django.urls import path, include
 from rest_framework import routers
 
+from category.views import CategoryViewSet
+
 router = routers.DefaultRouter()
-router.register(r"users", UserViewSet)
+
+router.register(r"categories", CategoryViewSet, basename="categories")
 
 urlpatterns = [
-    path("", include(router.urls)),
     path("admin/", admin.site.urls),
+    path("", include(router.urls)),
 ]
