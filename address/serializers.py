@@ -1,9 +1,21 @@
 from rest_framework.serializers import ModelSerializer
-
+from user.serilizers import UsersDetailsSerializer
 from address.models import Address
 
 
 class AddressSerializer(ModelSerializer):
+    users = UsersDetailsSerializer(required=False, many=True, read_only=True)
+
     class Meta:
         model = Address
-        fields = "__all__"
+        fields = [
+            "address_uuid",
+            "street",
+            "number",
+            "city",
+            "state",
+            "zip_code",
+            "country",
+            "users",
+        ]
+        depth = 1
