@@ -3,7 +3,7 @@ from user.models import User
 from user.permissions import CreateSuperuser
 from rest_framework.authentication import TokenAuthentication
 
-from user.serilizers import UsersSerializer
+from user.serializers import UsersSerializer
 
 
 class UserViewSet(ModelViewSet):

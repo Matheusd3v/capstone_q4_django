@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from user.serilizers import UsersDetailsSerializer
+from user.serializers import UsersDetailsSerializer
 from address.models import Address
 
 
