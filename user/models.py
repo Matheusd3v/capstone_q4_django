@@ -10,5 +10,5 @@ class User(AbstractUser):
         "address.Address", on_delete=models.RESTRICT, related_name="users", null=True
     )
 
-    def __str__(self):
-        return "%s - %s" % (self.username, self.address)
+    # def __str__(self):
+    #     return "%s - %s" % (self.username, self.address)
