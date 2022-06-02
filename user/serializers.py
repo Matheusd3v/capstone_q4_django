@@ -38,8 +38,8 @@ class UsersDetailsSerializer(ModelSerializer):
         model = User
         fields = (
             "user_uuid",
-            "email",
             "first_name",
+            "email",
         )
 
         extra_kwargs = {"user_uuid": {"read_only": True}}
