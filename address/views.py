@@ -14,7 +14,7 @@ class AddressViewSet(ModelViewSet):
     serializer_class = AddressSerializer
 
     @action(detail=False, methods=["put"])
-    def user_addres(self, request, pk=None):
+    def user_address(self, request, pk=None):
         user: User = request.user
         data = request.data
 
