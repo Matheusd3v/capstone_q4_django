@@ -29,3 +29,15 @@ class UsersSerializer(ModelSerializer):
             return User.objects.create_superuser(**validated_data)
 
         return User.objects.create_user(**validated_data)
+
+
+class UsersDetailsSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            "user_uuid",
+            "email",
+            "first_name",
+        )
+
+        extra_kwargs = {"user_uuid": {"read_only": True}}
