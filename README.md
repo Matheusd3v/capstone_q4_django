@@ -1,28 +1,54 @@
-# capstone_q4_django
+# 🐍 Capstone Django - Mercearia do seu Zé
 
-### Instalar o poetry
-```shell
-  https://python-poetry.org/docs/
-```
+![DiagramaEr](https://github.com/Matheusd3v/capstone_q4_django/blob/main/Capstone_Django_Q4_Diagram.png)
+## 📃Documentação:
 
-para ativar o ambiente virtual
+  🔗 <a href="https://mercado-capstone-dj.herokuapp.com/api/swagger/">Clique aqui para vizualizar no swager</a>
 
-```shell
-  poetry shell
-```
+  🔗 <a href="https://mercado-capstone-dj.herokuapp.com/api/redoc/">Clique aqui para vizualizar no Redoc</a>
 
-adicionar as dependências com o requirements.txt
+  🔗 <a href="https://mercado-capstone-dj.herokuapp.com/admin">Painel só para Admin</a>
 
-```shell
-  poetry add `cat requirements.txt`
-```
 
-criar banco de dados
-```shell
-  ./manage.py makemigrations && ./manage.py migrate
-```
+# 👨‍💻 Tecnologias Utlizadas
+- Django
+- Swagger
+- jwt
 
-criar um super usuário
-```shell
-  ./manage.py createsuperuser
-```
+# 🧠 Equipe de Desenvolvimento<br>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/smilly3D">
+        <img src="https://ca.slack-edge.com/TQZR39SET-U021DJE1TST-f8d74a880494-512" width="100px;" alt="Foto do Smilly Delmondes"/><br>
+        <sub>
+          <b>Smilly Delmondes</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="https://github.com/felipelarson">
+        <img src="https://ca.slack-edge.com/TQZR39SET-U020KU53GGG-1d9d66a91c6b-512" width="100px;" alt="Felipe Silveira"/><br>
+        <sub>
+          <b>Felipe Silveira</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="https://github.com/Matheusd3v">
+        <img src="https://ca.slack-edge.com/TQZR39SET-U022BPELR8E-885d487e3f4d-72" width="100px;" alt="Foto do Matheus Gomes"/><br>
+        <sub>
+          <b>Matheus Gomes</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="https://github.com/matheusburey">
+        <img src="https://ca.slack-edge.com/TQZR39SET-U01V3BLGUES-8f8b04f61947-512" width="100px;" alt="Foto do Matheus H. Burey"/><br>
+        <sub>
+          <b>Matheus H. Burey</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
