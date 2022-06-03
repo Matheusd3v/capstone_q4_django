@@ -9,8 +9,8 @@ class Brand(models.Model):
         verbose_name_plural = "brands"
 
     brand_uuid = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    name = models.CharField(max_length=255)
-    site = models.CharField(max_length=255, null=True)
+    name = models.CharField(max_length=255, unique=True)
+    site = models.CharField(max_length=255, null=True, unique=True)
 
     def __str__(self):
         return "%s (%s)" % (self.name, self.site)
