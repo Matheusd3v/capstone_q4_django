@@ -1,5 +1,23 @@
 # 🐍 Capstone Django - Mercearia do seu Zé
 
+## **Instalação**
+
+Caso queira instalar a API para rodar os testes localmente em sua máquina, siga os seguintes passos:
+
+1 - Instale um ambiente virtual (`venv`) na raíz do projeto
+
+```bash
+python -m venv venv && source venv/bin/activate
+```
+2 - Instale as dependências presentes no arquivo `requirements.txt` no terminal :
+```bash
+pip install -r requirements.txt
+```
+2 - Em seguida, inicie a aplicação  do django.
+```bash
+./manage.py runserver
+```
+## Diagrama:
 ![DiagramaEr](https://github.com/Matheusd3v/capstone_q4_django/blob/main/Capstone_Django_Q4_Diagram.png)
 ## 📃Documentação:
 
