@@ -1,11 +1,12 @@
 from uuid import uuid4
 from django.db import models
+from django.db.models import F
 
 
 class Purchase(models.Model):
     class StatusPurchase(models.IntegerChoices):
         CART = 1, "Cart"
-        ACCOMPLISHED = 2, "Accomplished"
+        REALIZED = 2, "Realized"
         PAID = 3, "Paid"
         DELIVERED = 4, "Delivered"
 
@@ -19,6 +20,13 @@ class Purchase(models.Model):
 
     def __str__(self):
         return "%s - %s" % (self.user, self.status)
+
+    @property
+    def total(self):
+        queryset = self.itens.all().aggregate(
+            total=models.Sum(F("quantity") * F("products__price"))
+        )
+        return queryset["total"]
 
 
 class ItensPurchase(models.Model):

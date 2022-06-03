@@ -19,4 +19,4 @@ class Products(models.Model):
     )
 
     def __str__(self):
-        return "%s (%s)" % (self.name, self.brand)
+        return "%s (%s - %s)" % (self.name, self.brand.name, self.brand.site)
