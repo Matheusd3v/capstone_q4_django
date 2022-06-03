@@ -2,6 +2,8 @@
 
 ## **Instalação**
 
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Capstone-Z%C3%89&uri=https%3A%2F%2Fraw.githubusercontent.com%2FMatheusd3v%2Fcapstone_q4_django%2Fmain%2Finsominia_export.json)
+
 Caso queira instalar a API para rodar os testes localmente em sua máquina, siga os seguintes passos:
 
 1 - Instale um ambiente virtual (`venv`) na raíz do projeto
