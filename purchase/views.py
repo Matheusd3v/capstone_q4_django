@@ -6,9 +6,15 @@ from purchase.serializers import PurchaseSerializer, CreateAndEditPurchaseSerial
 
 class PurchaseViewSet(ModelViewSet):
     queryset = Purchase.objects.all()
-    # serializer_class = PurchaseSerializer
 
     def get_serializer_class(self):
         if self.action == "list" or self.action == "retrieve":
             return PurchaseSerializer
         return CreateAndEditPurchaseSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_superuser:
+            return Purchase.objects.all()
+        return Purchase.objects.filter(user=user)

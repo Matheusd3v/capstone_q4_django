@@ -1,4 +1,12 @@
-from rest_framework.serializers import ModelSerializer, CharField, SerializerMethodField
+from rest_framework.serializers import (
+    ModelSerializer,
+    CharField,
+    SerializerMethodField,
+    HiddenField,
+    CurrentUserDefault,
+)
+from rest_framework import serializers
+
 
 from purchase.models import Purchase, ItensPurchase
 
@@ -40,9 +48,18 @@ class CreateAndEditItensPurchaseSerializer(ModelSerializer):
             "quantity",
         )
 
+    def validate(self, data):
+        if data["quantity"] > data["products"].quantity:
+            raise serializers.ValidationError(
+                {"quantity": "requested quantity not available."}
+            )
+
+        return data
+
 
 class CreateAndEditPurchaseSerializer(ModelSerializer):
     itens = CreateAndEditItensPurchaseSerializer(many=True)
+    user = HiddenField(default=CurrentUserDefault())
 
     class Meta:
         model = Purchase
@@ -55,3 +72,13 @@ class CreateAndEditPurchaseSerializer(ModelSerializer):
             ItensPurchase.objects.create(purchase=purchase, **item)
         purchase.save()
         return purchase
+
+    def update(self, instance, validated_data):
+        itens = validated_data.pop("itens")
+        if itens:
+            instance.itens.all().delete()
+            for item in itens:
+                ItensPurchase.objects.create(purchase=instance, **item)
+
+            instance.save()
+            return instance
